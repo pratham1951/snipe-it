@@ -1,8 +1,8 @@
-name: Terraform CI integration
+name: Terraform CI integration dev
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev" ]
 
 jobs:
 
@@ -13,6 +13,11 @@ jobs:
     steps:
     - name: Code checkout
       uses: actions/checkout@v3
+
+    - name: List directory
+      run: |
+          ls 
+          pwd 
 
     - name: Terraform Init
       run: |
@@ -50,4 +55,3 @@ jobs:
     #       GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
     #       TF_ACTION_WORKING_DIR: 'terraform'
     #       TF_VAR_admin_username: 'ubuntu'
-
