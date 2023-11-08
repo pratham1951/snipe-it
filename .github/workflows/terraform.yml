@@ -2,7 +2,7 @@ name: Terraform CI integration
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev" ]
 
 jobs:
 
@@ -13,6 +13,11 @@ jobs:
     steps:
     - name: Code checkout
       uses: actions/checkout@v3
+
+    - name: List directory
+      run: |
+          ls 
+          pwd 
 
     - name: Terraform Init
       run: |
