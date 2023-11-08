@@ -16,7 +16,7 @@ jobs:
       
     - name: Terraform Init
       run: |
-          cd ./Terraform
+          cd ./terraform
           terraform init
       env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
