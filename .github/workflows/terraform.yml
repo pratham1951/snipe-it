@@ -14,6 +14,10 @@ jobs:
     - name: Code checkout
       uses: actions/checkout@v3
       
+    - name: Change directory
+      run: |
+          cd ./terraform
+      
     - name: Terraform Init
       # run: |
       #     cd ./terraform
