@@ -14,16 +14,30 @@ jobs:
     - name: Code checkout
       uses: actions/checkout@v3
       
-    - name: Change directory
+    - name: Terraform Init
       run: |
           cd ./terraform
-      
-    - name: Terraform Init
-      # run: |
-      #     cd ./terraform
-      #     terraform init
-      uses: hashicorp/terraform-github-actions/init@v0.4.0
+          terraform init
       env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           TF_ACTION_WORKING_DIR: 'terraform'
+          TF_VAR_admin_username: 'ubuntu'
+          
+    - name: Terraform Plan
+      run: |
+          cd ./terraform
+          terraform plan
+      env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          TF_ACTION_WORKING_DIR: 'terraform'
+          TF_VAR_admin_username: 'ubuntu'
+          
+    - name: Terraform Apply
+      run: |
+          cd ./terraform
+          terraform apply -auto-approve
+      env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          TF_ACTION_WORKING_DIR: 'terraform'
+          TF_VAR_admin_username: 'ubuntu'
 
