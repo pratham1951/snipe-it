@@ -93,11 +93,6 @@ resource "azurerm_linux_virtual_machine" "Pratham" {
     host        = self.public_ip_address
   }
 
-  provisioner "file" {
-    source      = ".."
-    destination = "/var/www/snipe-it/"
-  }
-
    // Copying file from our local machine to Azure VM
   provisioner "file" {
     source      = "./install-snipe-it.sh"
