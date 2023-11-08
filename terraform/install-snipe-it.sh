@@ -31,7 +31,7 @@ sudo mysql -u root -e "GRANT ALL PRIVILEGES ON snipeitdb.* TO 'snipeituser'@'loc
 sudo mysql -u root -e "FLUSH PRIVILEGES;"
 
 cd /var/www/
-sudo git clone https://$GITHUB_TOKEN@github.com/PearlThoughtsInternship/snipe-it.git
+sudo git clone https://github.com/snipe/snipe-it
 cd /var/www/snipe-it
 
 sudo cp .env.example .env
