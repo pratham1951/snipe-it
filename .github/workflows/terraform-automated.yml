@@ -79,10 +79,10 @@ jobs:
       working-directory: ${{ env.ROOT_PATH }}
 
       #github.ref == 'refs/heads/main' && github.event_name == 'push'
-    # - name: terraform Apply
-    #   run: terraform apply -auto-approve
-    #   if: ${{inputs.tf_destroy}} == false
-    #   working-directory: ${{ env.ROOT_PATH }}
+    - name: terraform Apply
+      run: terraform apply -auto-approve
+      if: ${{inputs.tf_destroy}} == false
+      working-directory: ${{ env.ROOT_PATH }}
 
     # - name: terraform destroy
     #   run: terraform destroy -auto-approve
