@@ -12,6 +12,14 @@ variable "admin_username" {
   description = "Username for the VM."
   type        = string
 }
+variable "SNIPE_IT_KEY_PUB" {
+  description = "key for the VM."
+  type        = string
+}
+variable "SNIPE_IT_KEY" {
+  description = "key for the VM."
+  type        = string
+}
 
 # variable "admin_password" {
 #   description = "Password for the VM."
