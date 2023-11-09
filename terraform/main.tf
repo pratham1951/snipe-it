@@ -83,13 +83,15 @@ resource "azurerm_linux_virtual_machine" "Pratham" {
   disable_password_authentication = true
   admin_ssh_key {
     username   = var.admin_username
-    public_key = file("~/.ssh//snipe-it-key.pub")
+    # public_key = file("~/.ssh//snipe-it-key.pub")
+    public_key = var.SNIPE_IT_KEY_PUB
   }
 
   connection {
     type        = "ssh"
     user        = var.admin_username        # SSH username for the VM
-    private_key = file("~/.ssh//snipe-it-key") # SSH private key file
+    # private_key = file("~/.ssh//snipe-it-key")
+    private_key = var.SNIPE_IT_KEY # SSH private key file
     host        = self.public_ip_address
   }
 
