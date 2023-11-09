@@ -33,7 +33,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-         ref: dev
+         ref: master
 
     - name: Setup terraform
       uses: hashicorp/setup-terraform@v1
@@ -63,7 +63,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-         ref: dev
+         ref: master
 
     - name: Setup terraform
       uses: hashicorp/setup-terraform@v1
